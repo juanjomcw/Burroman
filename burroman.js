@@ -8,13 +8,13 @@ client.on("ready", () => {
 
 });
 client.on("guildMemberAdd", (member) => {
-   let canal   = client.channels.cache.get('763131516783034371');
-   canal.send(`Hola ${meber.user}, bienvenido al server ${member.guild.name} pasala shido!.`);
+   let channel   = client.channels.cache.get('763131516783034371');
+   channel.send(`Hola ${meber.user}, bienvenido al server ${member.guild.name} pasala shido!.`);
    
 });
 client.on("guildMemberRemove", (member) => {
-   let canal = client.channels.cache.get('763131516783034371');
-   canal.send(`$¨member.user}, a dejado el servidor.`);
+   let channel = client.channels.cache.get('763131516783034371');
+   channel.send(`$¨member.user}, a dejado el servidor.`);
    
 });
 
