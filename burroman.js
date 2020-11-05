@@ -41,9 +41,9 @@ client.on("message", (message) => {
  }else
     if(message.content.startsWith(prefix + 'gulag')){
 
-       var rpts = ["Sí <:pepePoint:761701490766643260>", "No <:Burroman:772335436860882967>", "Tal vez <:uff:770760152449155072>", "No sé <:pepeg:757459371302191134>", "Definitivamente NO <:Burroman:772335436860882967> ", "Definitivamente SI <:KEKW:757452989232447589> "];
+       var rpts = ["Sí <:pepePoint:761701490766643260>", "No <:Burroman:772335436860882967>", "Tal vez <:uff:770760152449155072>", "Definitivamente NO <:Burroman:772335436860882967> ", "Primero dios si :pray_tone3: ", "Hoy no, mañana si <:uff:770760152449155072>", "Dios mediante no :pray_tone3: "];
        if (!arguments) return message.reply(`Escriba una pregunta.`);
-       message.channel.send(message.member.user+' BURROMAN dice que '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
+       message.channel.send(message.member.user+' Burroman <:Burroman:772335436860882967> dice que '+ rpts[Math.floor(Math.random() * rpts.length)]+' te iras al Gulag');
    
   }else
     if (message.content.startsWith(prefix + "banned")){
