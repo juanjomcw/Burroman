@@ -16,7 +16,7 @@ client.on("guildMemberAdd", (member) =>
  client.on("guildMemberRemove", (member) => 
  {
      messageToSend = member.user.username + " Salio de Varelandia <:sadKEK:773965912637571124>";
-     client.channels.get('433510888188805132').sendMessage(messageToSend);
+     client.channels.get('763131516783034371').sendMessage(messageToSend);
  });
 
 
