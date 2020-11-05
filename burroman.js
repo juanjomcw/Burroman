@@ -15,9 +15,7 @@ client.on("message", (message) => {
     if (!message.content.startsWith(prefix)) return;
     if (message.author.bot) return;
 
-   if (message.content.startsWith(prefix + "twitter")){
-   message.channel.send('');
- }else
+ 
  if(message.content.startsWith(prefix + 'avatar')){
    let img = message.mentions.users.first()
    if (!img) {
@@ -45,7 +43,7 @@ client.on("message", (message) => {
 
        var rpts = ["Sí pepePoint ", "No :Burroman: ", "Tal vez :uff: ", "No sé :pepeg:  ", "Definitivamente NO :Burroman: ", "Definitivamente SI :KEKW: ", "Sí pepePoint " ];
        if (!arguments) return message.reply(`Escriba una pregunta.`);
-       message.channel.send(message.member.user+' Mi respuesta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
+       message.channel.send(message.member.user+' Mi respuesta es: '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
    
   }else
     if (message.content.startsWith(prefix + "banned")){
