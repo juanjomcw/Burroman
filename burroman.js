@@ -43,7 +43,7 @@ client.on("message", (message) => {
  }else
     if(message.content.startsWith(prefix + 'gulag')){
 
-       var rpts = ["Sí <:pepePoint:761701490766643260>", "No <:Burroman:772335436860882967>", "Tal vez <:uff:770760152449155072>", "No sé <:pepeg:757459371302191134>", "Definitivamente NO <:Burroman:772335436860882967> ", "Definitivamente SI <:KEKW:757452989232447589> "];
+       var rpts = ["Sí <:pepePoint:772187071095242803>", "No <:Burroman:772241066757455882>", "Tal vez <:uff:772187078096060508>", "No sé <:pepeg:772187051666964541>", "Definitivamente NO <:Burroman:772241066757455882> ", "Definitivamente SI <:KEKW:772187081665413180> "];
        if (!arguments) return message.reply(`Escriba una pregunta.`);
        message.channel.send(message.member.user+' Mi respuesta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
    
