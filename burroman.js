@@ -43,13 +43,13 @@ client.on("message", (message) => {
  }else
     if(message.content.startsWith(prefix + 'gulag')){
 
-       var rpts = ["Sí <:pepePoint:772187071095242803>", "No <:Burroman:772241066757455882>", "Tal vez <:uff:772187078096060508>", "No sé <:pepeg:772187051666964541>", "Definitivamente NO <:Burroman:772241066757455882> ", "Definitivamente SI <:KEKW:772187081665413180> "];
+       var rpts = ["Sí pepePoint ", "No :Burroman: ", "Tal vez :uff: ", "No sé :pepeg:  ", "Definitivamente NO :Burroman: ", "Definitivamente SI :KEKW: ", "Sí pepePoint " ];
        if (!arguments) return message.reply(`Escriba una pregunta.`);
        message.channel.send(message.member.user+' Mi respuesta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
    
   }else
     if (message.content.startsWith(prefix + "banned")){
-      message.channel.send("<:BAN:539490906097582101><:NED:539490907721039888>", {file:"https://cdn.discordapp.com/attachments/421867754480599050/468529032494055454/O3DHIA5.gif"});
+      message.channel.send(":BAN::NED:", {file:"https://cdn.discordapp.com/attachments/421867754480599050/468529032494055454/O3DHIA5.gif"});
        
 }else 
     if(message.content.startsWith(prefix + 'love')){
