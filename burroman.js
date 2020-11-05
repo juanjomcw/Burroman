@@ -12,6 +12,12 @@ client.on("guildMemberAdd", (member) =>
      messageToSend = "Bienvenido " + member.user + " a la Varelandia! <:varelaLove:773963271308443648>", {file:"https://cdn.discordapp.com/attachments/758404276727840768/773963806035410974/a9ee685e855123d0e66b26f506d501b9.gif"};
      client.channels.get('763131516783034371').sendMessage(messageToSend);
  });
+ 
+ client.on("guildMemberRemove", (member) => 
+ {
+     messageToSend = member.user.username + " Salio de Varelandia <:sadKEK:773965912637571124>";
+     client.channels.get('433510888188805132').sendMessage(messageToSend);
+ });
 
 
 let prefix = process.env.PREFIX;
