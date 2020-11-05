@@ -4,7 +4,7 @@ const  client = new Discord.Client();
 client.on("ready", () => {
    console.log("Estoy listo!");
    
-   client.user.setGame('https://www.twitch.tv/theburroman69');
+   client.user.setGame('www.twitch.tv/theburroman69');
 
 });
 
