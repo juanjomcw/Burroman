@@ -7,19 +7,17 @@ client.on("ready", () => {
    client.user.setGame('www.twitch.tv/theburroman69');
 
 });
-{
-const channelId = '763131516783034371' //Bievenida
+client.on("guildMemberAdd", (member) => {
+   let canal   = client.channels.cache.get('763131516783034371');
+   canal.send(`Hola ${meber.user}, bienvenido al server ${member.guild.name} pasala shido!.`);
+   
+});
+client.on("guildMemberRemove", (member) => {
+   let canal = client.channels.cache.get('763131516783034371');
+   canal.send(`$¨member.user}, a dejado el servidor.`);
+   
+});
 
-client.on('guildMemberAdd', (member) => {
-    console.log(member)
-    
-    const message = `Bievenido <@${member.id}> al server!`
-
-    const channel = member.guild.channels.cache.get(channelId)
-    channel.send(message)
-
-    })
-}
 
 //sin prefix
 let prefix = process.env.PREFIX;
