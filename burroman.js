@@ -15,7 +15,7 @@ client.on("message", (message) => {
     if (!message.content.startsWith(prefix)) return;
     if (message.author.bot) return;
 
- 
+
  if(message.content.startsWith(prefix + 'avatar')){
    let img = message.mentions.users.first()
    if (!img) {
@@ -41,13 +41,13 @@ client.on("message", (message) => {
  }else
     if(message.content.startsWith(prefix + 'gulag')){
 
-       var rpts = ["Sí <:pepePoint:772187071095242803> ", "No <:Burroman:772241066757455882> ", "Tal vez <:uff:772187078096060508> ", "No sé <:pepeg:772187051666964541>  ", "Definitivamente NO <:Burroman:772241066757455882> ", "Definitivamente SI <:KEKW:772187081665413180> ", "Sí <:pepePoint:772187071095242803> " ];
+       var rpts = ["Sí <:pepePoint:761701490766643260>", "No <:Burroman:772335436860882967>", "Tal vez <:uff:770760152449155072>", "No sé <:pepeg:757459371302191134>", "Definitivamente NO <:Burroman:772335436860882967> ", "Definitivamente SI <:KEKW:757452989232447589> "];
        if (!arguments) return message.reply(`Escriba una pregunta.`);
-       message.channel.send(message.member.user+' Mi respuesta es: '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
+       message.channel.send(message.member.user+' BURROMAN dice que '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
    
   }else
     if (message.content.startsWith(prefix + "banned")){
-      message.channel.send(":BAN::NED:", {file:"https://cdn.discordapp.com/attachments/421867754480599050/468529032494055454/O3DHIA5.gif"});
+      message.channel.send("<:BAN:758106286046183424><:NED:758106286297972778>", {file:"https://cdn.discordapp.com/attachments/421867754480599050/468529032494055454/O3DHIA5.gif"});
        
 }else 
     if(message.content.startsWith(prefix + 'love')){
