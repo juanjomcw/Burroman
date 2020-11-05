@@ -2,7 +2,7 @@
   "name": "mybot-heroku",
   "version": "1.0.0",
   "description": "An in-depth guide on deploying your Discord.js bot on Heroku",
-  "main": "mapachebot.js",
+  "main": "burroman.js",
   "engines": {
     "node": "8.x",
     "npm": "*"
