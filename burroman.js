@@ -286,6 +286,7 @@ if (message.author.bot) return;
         if(rollfish === 13) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :crab:');
         if(rollfish === 14) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :tropical_fish:');
         if(rollfish === 15) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :dolphin:');
+        if(rollfish === 16) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :lobster:');
         if(rollfish === 17) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shark:');
         if(rollfish === 18) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :whale:');
         if(rollfish === 19) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :lobster:');
