@@ -140,8 +140,8 @@ if (message.author.bot) return;
 
 
      const embed = new Discord.MessageEmbed()
-     .setThumbnail(message.guild.iconURL())   
-     .setAuthor(message.author.username, message.author.avatarURL())
+     .setThumbnail(message.guild.iconURL({dynamic: true}))   
+     .setAuthor(message.author.username, message.author.avatarURL({dynamic: true}))
      .setTitle('Hola soy Burroman, el bot del canal que solo echa desmadre')
      .setDescription('Aca abajo estan todos los comandos actuales que existen, y que puedes usar, con forme pase el tiempo iremos actualizando comandos y agregando nuevas cosas')
     .addField('!avatar', 'Muestra el avatar de un usuario', true)
