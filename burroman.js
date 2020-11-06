@@ -73,7 +73,14 @@ client.on('message', msg => {
     msg.channel.send('<:BAN:758106286046183424><:NED:758106286297972778>')
 
   }
+  if(msg.content === 'Burroman'){
+    msg.channel.send(`Silencio <:Burroman:772335436860882967> ${msg.author}`)
+  
+  }
+    if(msg.content === 'Ban'){
+    msg.channel.send('<:BAN:758106286046183424><:NED:758106286297972778>')
 
+  }
 
 
 });
