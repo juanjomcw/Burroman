@@ -264,7 +264,7 @@ if (message.author.bot) return;
         message.channel.send({ embed });
     }
     if(command === 'espai'){
-        message.channel.send('gei <:uff:770760152449155072> y me fundador de mi nombre')
+        message.channel.send('gei <:uff:770760152449155072> y el fundador de mi nombre')
     
     
     }              //JUEGO DE PESCA
