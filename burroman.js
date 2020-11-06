@@ -264,13 +264,13 @@ if (message.author.bot) return;
         message.channel.send({ embed });
     }
     if(command === 'espai'){
-        message.channel.send('gei <:uff:770760152449155072> y el fundador de mi nombre')
+        message.channel.send('Gei  <:uff:770760152449155072> Ah! y es el fundador de mi nombre!')
     
     
     }              //JUEGO DE PESCA
     if(command === 'pesca'){
 
-        let rollfish = Math.floor(Math.random() * 15) +1;
+        let rollfish = Math.floor(Math.random() * 21) +1;
         if(rollfish === 1) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :tropical_fish:');
         if(rollfish === 2) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :fish:');
         if(rollfish === 3) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shopping_cart:');
@@ -285,7 +285,12 @@ if (message.author.bot) return;
         if(rollfish === 12) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :roll_of_paper:');
         if(rollfish === 13) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :crab:');
         if(rollfish === 14) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :tropical_fish:');
-        if(rollfish =>  15) return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
+        if(rollfish === 15) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :dolphin:');
+        if(rollfish === 17) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shark:');
+        if(rollfish === 18) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :whale:');
+        if(rollfish === 19) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :lobster:');
+        if(rollfish === 20) return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shark:');
+        if(rollfish =>  21) return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
                 //fin juego de PESCA
 
     }           
