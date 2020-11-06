@@ -137,7 +137,7 @@ if (message.author.bot) return;
         message.channel.send(embed);
     }    //////////////////////////////////////////////////////////////////
     if(command === 'help'){
-        message.channel.send('**'+message.author.username+'**, Revisa tus mensajes privados.');
+
 
      const embed = new Discord.MessageEmbed()
      .setThumbnail(message.guild.iconURL())   
