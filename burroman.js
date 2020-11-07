@@ -82,11 +82,11 @@ client.on('message', msg => {
 
   }
    if(msg.content === 'churroman'){
-    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varela3Pium:768963945166929930>')
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varelaPiumPium:759776664435294239>')
 
   }
   if(msg.content === 'Churroman'){
-    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varela3Pium:768963945166929930>')
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varelaPiumPium:759776664435294239>')
 
   }
 
