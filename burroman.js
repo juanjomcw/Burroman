@@ -81,7 +81,14 @@ client.on('message', msg => {
     msg.channel.send('<:BAN:758106286046183424><:NED:758106286297972778>')
 
   }
+   if(msg.content === 'churroman'){
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740><:varelaDrive:745085329693999145>')
 
+  }
+  if(msg.content === 'Churroman'){
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740><:varelaDrive:745085329693999145>')
+
+  }
 
 });
 
