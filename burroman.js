@@ -82,11 +82,11 @@ client.on('message', msg => {
 
   }
    if(msg.content === 'churroman'){
-    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740><:varelaDrive:745085329693999145>')
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varela3Pium:768963945166929930>')
 
   }
   if(msg.content === 'Churroman'){
-    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740><:varelaDrive:745085329693999145>')
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varela3Pium:768963945166929930>')
 
   }
 
@@ -171,6 +171,7 @@ if (message.author.bot) return;
     .addField('!espai', 'Te dice quien es espai', true)
     .addField('!pesca', 'Mini juego donde te dice que pescaste', true)
     .addField('!gulag', 'Te sientes con suerte y no le temes a la muerte? entonces usalo', true)
+     .addField('churroman', 'Solo no le digas asi', true)
     .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/MKwRKm7TSq)', true)
     .setColor(0xff6b9f)
     .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
