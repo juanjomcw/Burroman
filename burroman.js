@@ -279,7 +279,7 @@ if (message.author.bot) return;
         message.channel.send({ embed });
     }
     if(command === 'espai'){
-        message.channel.send('Gei  <:uff:770760152449155072> Ah! y es el fundador de mi nombre!')
+        message.channel.send('Espai es Gei  <:uff:770760152449155072> y pendejo! <:pepePoint:761701490766643260>')
     
     
     }              //JUEGO DE PESCA
