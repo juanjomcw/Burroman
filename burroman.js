@@ -309,7 +309,17 @@ if (message.author.bot) return;
         if(rollfish =>  21) return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
                 //fin juego de PESCA
 
-    }           
+    }
+    if(command === 'voto'){
+
+        let rpts = ["Sí", "No"]
+
+        if (!args) return message.reply(`Escriba una pregunta.`)
+        let usuario = message.member.user
+        message.channel.send(' **El gran __Burroman__ dice:** '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
+    
+    
+    }
     
 
 
