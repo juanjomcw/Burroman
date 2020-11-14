@@ -114,6 +114,7 @@ if (message.author.bot) return;
     if(command === 'twitch'){
         message.channel.send('Sigueme en mi tuish: https://www.twitch.tv/theburroman69')
     }
+    
 
   //seguir con ejemplo para comandos
     if(command === 'avatar'){
@@ -318,6 +319,16 @@ if (message.author.bot) return;
         if (!args) return message.reply(`Escriba una pregunta.`)
         let usuario = message.member.user
         message.channel.send(' **El gran __Burroman__ dice:** '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
+    
+    
+    }
+   if(command === 'tiempo'){
+
+        let rpts = ["1 minuto", "5 minutos", "10 minutos", "15 minutos", "20 minutos", "30 minutos" ]
+
+        if (!args) return message.reply(`Escriba una pregunta.`)
+        let usuario = message.member.user
+        message.channel.send(' Estaras en el gulag '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
     
     
     }
