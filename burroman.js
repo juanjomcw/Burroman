@@ -234,7 +234,7 @@ if (message.author.bot) return;
     }
     if(command === 'gulag'){
 
-        let rpts = ["Sí te iras al gulag <:uff:770760152449155072>","No te iras al gulag <:Burroman:772335436860882967>","Andas de suerte, no iras al gulag <:sadKEK:761281532035596349>", "Es Día de promo! <:happypog:772323350471114814> vete al gulag con un amigo! <:happypog:772323350471114814> ", "Al parecer haz escogido el camino de la MUERTE :smiling_imp: vete al gulag", "directo al gulag", "Hoy no es dia de Gulag <:peepoShy:774102554992312371> "]
+        let rpts = ["Sí te iras al gulag <:uff:770760152449155072>","No te iras al gulag <:Burroman:772335436860882967>","Andas de suerte, no iras al gulag <:sadKEK:761281532035596349>", "Es Día de promo! <:happypog:772323350471114814> vete al gulag con un amigo! <:happypog:772323350471114814> ", "Al parecer haz escogido el camino de la MUERTE :smiling_imp: vete al gulag", "directo al gulag", "Hoy no es dia de Gulag <:peepoShy:776574982054346762> "]
 
         if (!args) return message.reply(`Escriba una pregunta.`)
         let usuario = message.member.user
