@@ -175,7 +175,8 @@ if (message.author.bot) return;
     .addField('tiempo', 'Dice cuanto tiempo estaras en el gulag', true) 
     .addField('voto', 'Solo dice si o no', true)
     .addField('churroman', 'Solo no le digas asi', true)
-    .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/MKwRKm7TSq)', true)
+     .addField('invite', 'link de invitacion al server', true)
+    .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
     .setColor(0xff6b9f)
     .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
     .setFooter('Hecho por moderadores de Varelandia', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
@@ -330,8 +331,11 @@ if (message.author.bot) return;
         if (!args) return message.reply(`Escriba una pregunta.`)
         let usuario = message.member.user
         message.channel.send(' Estaras en el gulag '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
-    
-    
+        
+    }
+    if(command === 'invite'){
+        message.channel.send('https://discord.gg/de8g7MCdZH')
+      
     }
     
 
