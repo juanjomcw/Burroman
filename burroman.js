@@ -322,7 +322,7 @@ if (message.author.bot) return;
       
     }
     if(command === 'cumple'){
-
+        message.delete()
         message.channel.send('Amigos, metimos un Bot para recordar su cumpleaños y así poder felicitarlos! :birthday:\n'+
                              'el Bot es sencillo solo tienen que poner lo siguiente:\n'+
                              ' ``bday set <zona horaria> dd/mm o mm/dd`` (según zona horaria es el formato) de cualquier forma les pide confirmación con la fecha según escribieron\n'+
@@ -336,7 +336,7 @@ if (message.author.bot) return;
 
     }
       if(command === 'cofre'){
-
+        message.delete()
         message.channel.send(
             'Acabamos de integrar los cofrecitos de streamloots, todos los subs tienen derecho a reclamar __un cofre por mes__ (cada resub)\n'+
             'solo pasen el nick de su cuenta de streamloots, si no cuentan con una pueden crearla en el siguiente link\n'+
