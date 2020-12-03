@@ -19,49 +19,31 @@ client.on('ready', () => {
 
 });
 
-//bienvenida 
+//bienvenida  
+const channelID = '732872280585142282'//Canal welcome
+const targetChannelID = '779033867637620798' //Canal de reglas
+client.on('guildMemberAdd', (member) => {
+console.log(member)
 
-client.on("guildMemberAdd", async (member) => {
-    let guild = client.guilds.cache.get("763131515974451220")   //server id 
-    let channel = client.channels.cache.get("773783284920221696");   //channel id
-    if (guild != member.guild) {
-        return console.log(`entro al grupo, ${member.user}`)
-    } else {
-        let embed = new MessageEmbed()
-        .setColor("GREEN")
-        .setAuthor(member.user.tag, member.user.displayAvatarURL())
-        .setImage('https://media.giphy.com/media/TKv4j0jA2IUfcLFCKl/giphy.gif')
-        .setTitle(`Bienvenido a ${guild.name}`)
-        .setDescription(`${member.user} Diviertete En El Servidor !`)
-        .setThumbnail(member.user.displayAvatarURL({dynamic: true, format: "png", size: 1024 }))
-        .setFooter("ahora Somos :", message.guild.memberCount)
-        await channel.send(embed)
-    }
+const message = `Bievenido <@${member.id}> a __Varelandia__! <:varelaHeart:745085348387881010>  Porfavor revisa las ${member.guild.channels.cache
+    .get(targetChannelID)
+    .toString()} que tenemos para ti!`
+
+const channel = member.guild.channels.cache.get(channelID)
+channel.send(message)
 });
+
 //Despedida
-client.on("guildMemberRemove", async (member) => {
-    
-    let guild = client.guilds.cache.get("763131515974451220")    //serveroID   
-    let channel = client.channels.cache.get("773783284920221696"); //cannel ID
-  
-   
-  if (guild != member.guild) {
-    return console.log(`Salio Del Grupo, ${member.user}`)
-  } else {
-     let embed = new MessageEmbed()
-   .setColor("GREEN")
-   .setAuthor(member.user.tag, member.user.displayAvatarURL()) 
-   .setImage('https://media.giphy.com/media/3og0IG0skAiznZQLde/giphy.gif')
-   .setTitle(`${guild.name}`)
-   .setDescription(`${member.user} , Te Extrañaremos`)
-   .setThumbnail(member.user.displayAvatarURL({dynamic: true, format: "png", size: 1024 }))
-   .setFooter("ahora Somos :", message.guild.memberCount)
-  
-   await channel.send(embed)
-  
-  } 
+const channelID2 = '732872280585142282'//Canal welcome
+client.on('guildMemberRemove', (member) => {
+console.log(member)
 
+const message = `<@${member.id}> salio corriendo de __Varelandia__! te extrañaremos <:sadKEK:761281532035596349> `
+
+const channel = member.guild.channels.cache.get(channelID2)
+channel.send(message)
 });
+
 
 //comandos sin prefix
 client.on('message', msg => {
