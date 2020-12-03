@@ -319,9 +319,38 @@ if (message.author.bot) return;
         message.channel.send('https://discord.gg/hvD7RWsESP')
       
     }
-    
+    if(command === 'cumple'){
+
+        message.channel.send('Amigos, metimos un Bot para recordar su cumpleaños y así poder felicitarlos! :birthday:\n'+
+                             'el Bot es sencillo solo tienen que poner lo siguiente:\n'+
+                             ' ``bday set <zona horaria> dd/mm o mm/dd`` (según zona horaria es el formato) de cualquier forma les pide confirmación con la fecha según escribieron\n'+
+                             'para ver zona horaria: <https://kevinnovak.github.io/Time-Zone-Picker/>\n'+
+                             '__Ejemplo:__\n'+
+                             '``bday set America/Chihuahua 18/05``\n'+
+                             'Si confirmaron por error pongan ``bday purge`` para borrar su fecha\n'+
+                             '     \n'+
+                             `Cualquier duda pueden preguntarle a <@&733212952265752636> \n`
+            );
+
+    }
+      if(command === 'cofre'){
+
+        message.channel.send(
+            'Acabamos de integrar los cofrecitos de streamloots, todos los subs tienen derecho a reclamar __un cofre por mes__ (cada resub)\n'+
+            'solo pasen el nick de su cuenta de streamloots, si no cuentan con una pueden crearla en el siguiente link\n'+
+            '<https://www.streamloots.com/varelabere>\n'+ 
+            'para asi reclamar su cofre\n'+
+            'una vez entregado notaran un :white_check_mark: en su comentario\n'
+            
+        )
+
+    }
 
 
+
+  
+  
+  
 
 
 });
