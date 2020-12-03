@@ -157,6 +157,8 @@ if (message.author.bot) return;
     .addField('!tiempo', 'Dice cuanto tiempo estaras en el gulag', true) 
     .addField('!voto', 'Solo dice si o no', true)
     .addField('!invite', 'link de invitacion al server', true)
+    .addField('!cofre', 'Informacion sobre cofres para subs', true)
+    .addField('!cumple', 'Informacion para agregar tu cumpleaños', true)
     .addField('churroman', 'Solo no le digas asi', true)
     .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
     .setColor(0xff6b9f)
