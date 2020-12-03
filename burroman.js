@@ -38,7 +38,7 @@ const channelID2 = '732872280585142282'//Canal welcome
 client.on('guildMemberRemove', (member) => {
 console.log(member)
 
-const message = `<@${member.id}> salio corriendo de __Varelandia__! te extrañaremos <:sadKEK:761281532035596349> `
+const message = `${member.user} salio corriendo de __Varelandia__! te extrañaremos <:sadKEK:761281532035596349> `
 
 const channel = member.guild.channels.cache.get(channelID2)
 channel.send(message)
