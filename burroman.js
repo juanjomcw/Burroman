@@ -316,7 +316,7 @@ if (message.author.bot) return;
         
     }
     if(command === 'invite'){
-        message.channel.send('https://discord.gg/de8g7MCdZH')
+        message.channel.send('https://discord.gg/hvD7RWsESP')
       
     }
     
