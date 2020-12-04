@@ -119,22 +119,9 @@ if (message.author.bot) return;
         
         };
     }
-    if(command === 'serverinfo'){
-        var server = message.guild;
-  
-        const embed = new Discord.MessageEmbed()
-    .setThumbnail(server.iconURL())
-    .setAuthor(server.name, server.iconURL())
-    .addField('Nombre', message.guild.name, true)
-    .addField('Creado el', server.joinedAt.toDateString(), true)
-    .addField('Dueño', message.guild.owner.user.username, true)
-    .addField('Miembros', message.guild.memberCount, true)
-    .setColor(0x66b3ff)
-    
-        message.channel.send(embed);
-    }    //////////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////////
     if(command === 'help'){
-
+      message.delete()//para borrar el mensaje del comando
 
      const embed = new Discord.MessageEmbed()
      .setThumbnail(message.guild.iconURL({dynamic: true}))   
@@ -256,7 +243,7 @@ if (message.author.bot) return;
     }
                     //jaladas a probar
     if(command === 'banned'){
-
+        message.delete()//para borrar el mensaje del comando
         let thumb = ["https://cdn.discordapp.com/attachments/773783284920221696/774350991306391592/O3DHIA5.gif", "https://i.imgur.com/pgAybBd.gif", "https://i.imgur.com/r42VJvZ.gif", "https://i.imgur.com/bfOSpyg.gif"]
         var enlace = thumb[Math.floor(Math.random() * thumb.length)]
         const embed = new Discord.MessageEmbed()
@@ -347,7 +334,26 @@ if (message.author.bot) return;
         )
 
     }
-
+       if(command === 'server'){
+        
+        var server = message.guild;
+  
+            const embed = new Discord.MessageEmbed()
+            .setThumbnail(server.iconURL({dynamic: true}))
+            .setAuthor(server.name, server.iconURL({dynamic: true}))
+            .addField('ID', server.id, true)
+            .addField('Región', server.region, true)
+            .addField('Creado el', server.joinedAt.toDateString(), true)
+            .addField('Dueño del Servidor', `${server.owner}` , true)
+            .addField('Miembros', server.memberCount, true)
+            .addField('Emotes' , server.emojis.cache.size, true)
+            .addField('Roles', server.roles.cache.size, true)
+            .addField('Canales', server.channels.cache.size, true)
+            .setColor("RANDOM")
+    
+        message.channel.send(embed);
+    
+    }
 
 
 
