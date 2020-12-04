@@ -38,7 +38,7 @@ const channelID2 = '732872280585142282'//Canal welcome
 client.on('guildMemberRemove', (member) => {
 console.log(member)
 
-const message = `${member.user} salio corriendo de __Varelandia__! te extrañaremos <:sadKEK:761281532035596349> `
+const message = `${member.user.username} salio corriendo de __Varelandia__! te extrañaremos <:sadKEK:761281532035596349> `
 
 const channel = member.guild.channels.cache.get(channelID2)
 channel.send(message)
@@ -318,7 +318,7 @@ if (message.author.bot) return;
         
     }
     if(command === 'invite'){
-        message.channel.send('https://discord.gg/hvD7RWsESP')
+        message.channel.send('https://discord.gg/de8g7MCdZH')
       
     }
     if(command === 'cumple'){
@@ -335,24 +335,20 @@ if (message.author.bot) return;
             );
 
     }
-      if(command === 'cofre'){
+    if(command === 'cofre'){
         message.delete()//para borrar el mensaje del comando
         message.channel.send(
-            'Acabamos de integrar los cofrecitos de streamloots, todos los subs tienen derecho a reclamar __un cofre por mes__ (cada resub)\n'+
+            'Acabamos de integrar los cofrecitos de streamloots, todos los subs tienen derecho a reclamar un cofre por mes (cada resub)\n'+
             'solo pasen el nick de su cuenta de streamloots, si no cuentan con una pueden crearla en el siguiente link\n'+
             '<https://www.streamloots.com/varelabere>\n'+ 
             'para asi reclamar su cofre\n'+
             'una vez entregado notaran un :white_check_mark: en su comentario\n'
-            
+
         )
 
     }
 
 
-
-  
-  
-  
 
 
 });
