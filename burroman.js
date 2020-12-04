@@ -141,7 +141,6 @@ if (message.author.bot) return;
      .setTitle('Hola soy Burroman, el bot del canal que solo echa desmadre')
      .setDescription('Aca abajo estan todos los comandos actuales que existen, y que puedes usar, con forme pase el tiempo iremos actualizando comandos y agregando nuevas cosas')
     .addField('!avatar', 'Muestra el avatar de un usuario', true)
-    .addField('!serverinfo', 'Muestra información de un servidor', true)
     .addField('burroman', 'burroman responde', true)
     .addField('ban', 'emote Banned', true)
     .addField('!twitch', 'Muestra Twitch de burroman', true)
