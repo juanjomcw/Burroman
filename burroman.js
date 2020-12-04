@@ -7,7 +7,7 @@ client.on('ready', () => {
 });
 
 client.on("ready", async () => {
-    const channelId = '784479835350630460'; ///Id del canal
+    const channelId = '784548314506330183'; ///Id del canal
     const channel = client.channels.cache.get(channelId); ///Esto obtiene el canal
     const embed = new Discord.MessageEmbed() ///Crea embed
     .setTitle("ESTOY LISTO!") ///Nombre
