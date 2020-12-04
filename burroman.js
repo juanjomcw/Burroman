@@ -4,8 +4,17 @@ const client = new Discord.Client();
 
 
 
-client.on('ready', () => {
-  console.log(`Estoy listo en ${client.user.tag}!`);
+client.on("ready", async () => {
+    const channelId = '773783284920221696'; ///Id del canal
+    const channel = client.channels.cache.get(channelId); ///Esto obtiene el canal
+    const embed = new Discord.MessageEmbed() ///Crea embed
+    .setTitle("ESTOY LISTO!") ///Nombre
+    .setColor('RANDOM') //Color
+    .setDescription(`Burroman esta disponible en ${client.guilds.cache.size} Servidores! `) //Descripcion
+    .setThumbnail('https://cdn.discordapp.com/attachments/261204184307728384/784341867999002624/772335436860882967.png') //URL De imagen nwn
+    .setFooter('Hecho por Juanjomcw#6778' , 'https://cdn.discordapp.com/attachments/261204184307728384/784341520274161674/d0f5cf5fb791ea9e332c8d8e3a1631ac_preview_rev_1_2.png')
+    .setTimestamp()
+    channel.send(embed)
 
   client.user.setPresence({
     status: "online",
