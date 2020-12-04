@@ -2,14 +2,16 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 
-
+client.on('ready', () => {
+    console.log(`Estoy listo en ${client.user.tag}!`);
+});
 
 client.on("ready", async () => {
-    const channelId = '784479835350630460'; ///Id del canal
+    const channelId = '773783284920221696'; ///Id del canal
     const channel = client.channels.cache.get(channelId); ///Esto obtiene el canal
     const embed = new Discord.MessageEmbed() ///Crea embed
-    .setTitle('__ESTOY LISTO!__') ///Nombre
-     .setColor(0x9c98f8) //Color
+    .setTitle("ESTOY LISTO!") ///Nombre
+    .setColor(0x9c98f8) //Color
     .setDescription('• Se han generado cambios!\n'+
                     `• Burroman esta disponible en ${client.guilds.cache.size} Servidores!\n`) //Descripcion
     .setThumbnail('https://cdn.discordapp.com/attachments/261204184307728384/784341867999002624/772335436860882967.png') //URL De imagen nwn
@@ -156,6 +158,7 @@ if (message.author.bot) return;
     .addField('!invite', 'link de invitacion al server', true)
     .addField('!cofre', 'Informacion sobre cofres para subs', true)
     .addField('!cumple', 'Informacion para agregar tu cumpleaños', true)
+    .addField('!server', 'Informacion del servidor', true)
     .addField('churroman', 'Solo no le digas asi', true)
     .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
     .setColor(0xff6b9f)
