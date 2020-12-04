@@ -8,7 +8,7 @@ client.on("ready", async () => {
     const channelId = '784343990535061524'; ///Id del canal
     const channel = client.channels.cache.get(channelId); ///Esto obtiene el canal
     const embed = new Discord.MessageEmbed() ///Crea embed
-    .setTitle("ESTOY LISTO!") ///Nombre
+    .setTitle('__ESTOY LISTO!__') ///Nombre
      .setColor(0x9c98f8) //Color
     .setDescription('• Se han generado cambios!\n'+
                     `• Burroman esta disponible en ${client.guilds.cache.size} Servidores!\n`) //Descripcion
