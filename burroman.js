@@ -369,7 +369,7 @@ if (message.author.bot) return;
     }
     if(command === 'set') {
         message.delete()
-        if (!message.member.roles.cache.find(r => r.name === "ADMI")) { // rol moderador
+        if (!message.member.roles.cache.find(r => r.name === "Admi")) { // rol moderador
             return message.channel.send(`Perdon <@${message.author.id}>, no tienes permiso para cambiar el status del bot <:sadKEK:761281532035596349>`).then(e => e.delete({
 				timeout: 5000
              }))
