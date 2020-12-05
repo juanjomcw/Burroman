@@ -391,7 +391,7 @@ if (message.author.bot) return;
 		if (!message.guild.me.permissions.has('Burroman')) {
 			return message.channel.send("No tengo permisos para borrar mensajes.")
         }
-        if (!message.member.roles.cache.find(r => r.name === "ADMI")) {
+        if (!message.member.roles.cache.find(r => r.name === "Admi")) {
             return message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para borrar mensajes <:sadKEK:761281532035596349>`)
           }
 
