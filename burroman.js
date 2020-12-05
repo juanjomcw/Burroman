@@ -369,7 +369,7 @@ if (message.author.bot) return;
     }
     if(command === 'set') {
         message.delete()
-        if (!message.member.roles.cache.find(r => r.name === "Admi")) { // rol moderador
+        if (!message.member.roles.cache.find(r => r.name === "CLEAR")) { // rol moderador
             return message.channel.send(`Perdon <@${message.author.id}>, no tienes permiso para cambiar el status del bot <:sadKEK:761281532035596349>`).then(e => e.delete({
 				timeout: 5000
              }))
@@ -391,7 +391,7 @@ if (message.author.bot) return;
 		if (!message.guild.me.permissions.has('Burroman')) {
 			return message.channel.send("No tengo permisos para borrar mensajes.")
         }
-        if (!message.member.roles.cache.find(r => r.name === "Admi")) {
+        if (!message.member.roles.cache.find(r => r.name === "CLEAR")) {
             return message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para borrar mensajes <:sadKEK:761281532035596349>`)
           }
 
