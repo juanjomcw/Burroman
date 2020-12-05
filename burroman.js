@@ -163,7 +163,8 @@ if (message.author.bot) return;
       .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
       .setColor(0xff6b9f)
       .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
-      .setFooter('Hecho por moderadores de Varelandia', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
+      .setTimestamp()
+      .setFooter('Hecho por Juanjomcw#6778', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png')
       
        message.author.send(embed);
       } //////////////////////////////////////////////////////////////////////////////////
