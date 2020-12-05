@@ -60,7 +60,7 @@ channel.send(message)
 //comandos sin prefix
 client.on('message', msg => {
   if(msg.content === 'burroman'){
-    msg.channel.send(`Silencio <:Burroman:772335436860882967> ${msg.author}`)
+    msg.channel.send(`Silencio <@${msg.author.id}> <:Burroman:772335436860882967>`)
 
   }
   if(msg.content === 'ban'){
@@ -68,7 +68,7 @@ client.on('message', msg => {
 
   }
   if(msg.content === 'Burroman'){
-    msg.channel.send(`Silencio <:Burroman:772335436860882967> ${msg.author}`)
+    msg.channel.send(`Silencio <@${msg.author.id}> <:Burroman:772335436860882967>`)
   
   }
     if(msg.content === 'Ban'){
@@ -130,42 +130,43 @@ if (message.author.bot) return;
                 return message.channel.send(embed);
         
         };
-    }
-    //////////////////////////////////////////////////////////////////
+    }    //////////////////////////////////////////////////////////////////
     if(command === 'help'){
-      message.delete()//para borrar el mensaje del comando
-
-     const embed = new Discord.MessageEmbed()
-     .setThumbnail(message.guild.iconURL({dynamic: true}))   
-     .setAuthor(message.author.username, message.author.avatarURL({dynamic: true}))
-     .setTitle('Hola soy Burroman, el bot del canal que solo echa desmadre')
-     .setDescription('Aca abajo estan todos los comandos actuales que existen, y que puedes usar, con forme pase el tiempo iremos actualizando comandos y agregando nuevas cosas')
-    .addField('!avatar', 'Muestra el avatar de un usuario', true)
-    .addField('burroman', 'burroman responde', true)
-    .addField('ban', 'emote Banned', true)
-    .addField('!twitch', 'Muestra Twitch de burroman', true)
-    .addField('!twitter', 'Muestra Twitter de burroman', true)
-    .addField('!impostor', 'Muestra si tu eres impostor u otro user', true)
-    .addField('!8burro', 'Hazle preguntas y respondera con afirmacion o negacion', true)
-    .addField('!love', 'Muestra el amor entre dos personas', true)
-    .addField('!banned', 'Muestra gif al azar de banneos', true)
-    .addField('!espai', 'Te dice quien es espai', true)
-    .addField('!pesca', 'Mini juego donde te dice que pescaste', true)
-    .addField('!gulag', 'Te sientes con suerte y no le temes a la muerte? entonces usalo', true)
-    .addField('!tiempo', 'Dice cuanto tiempo estaras en el gulag', true) 
-    .addField('!voto', 'Solo dice si o no', true)
-    .addField('!invite', 'link de invitacion al server', true)
-    .addField('!cofre', 'Informacion sobre cofres para subs', true)
-    .addField('!cumple', 'Informacion para agregar tu cumpleaños', true)
-    .addField('!server', 'Informacion del servidor', true)
-    .addField('churroman', 'Solo no le digas asi', true)
-    .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
-    .setColor(0xff6b9f)
-    .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
-    .setFooter('Hecho por moderadores de Varelandia', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
-    
-     message.author.send(embed);
-    } //////////////////////////////////////////////////////////////////////////////////
+        message.delete()//para borrar el mensaje del comando
+  
+       const embed = new Discord.MessageEmbed()
+      .setThumbnail(message.guild.iconURL({dynamic: true}))   
+      .setAuthor(message.author.username, message.author.avatarURL({dynamic: true}))
+      .setTitle('Hola soy Burroman, el bot del canal que solo echa desmadre')
+      .setDescription('Aca abajo estan todos los comandos actuales que existen, y que puedes usar, con forme pase el tiempo iremos actualizando comandos y agregando nuevas cosas')
+      .addField('!avatar', 'Muestra el avatar de un usuario', true)
+      .addField('burroman', 'burroman responde', true)
+      .addField('ban', 'emote Banned', true)
+      .addField('!twitch', 'Muestra Twitch de burroman', true)
+      .addField('!twitter', 'Muestra Twitter de burroman', true)
+      .addField('!impostor', 'Muestra si tu eres impostor u otro user', true)
+      .addField('!8burro', 'Hazle preguntas y respondera con afirmacion o negacion', true)
+      .addField('!love', 'Muestra el amor entre dos personas', true)
+      .addField('!banned', 'Muestra gif al azar de banneos', true)
+      .addField('!espai', 'Te dice quien es espai', true)
+      .addField('!pesca', 'Mini juego donde te dice que pescaste', true)
+      .addField('!gulag', 'Te sientes con suerte y no le temes a la muerte? entonces usalo', true)
+      .addField('!tiempo', 'Dice cuanto tiempo estaras en el gulag', true) 
+      .addField('!voto', 'Solo dice si o no', true)
+      .addField('!invite', 'link de invitacion al server', true)
+      .addField('!cofre', 'Informacion sobre cofres para subs', true)
+      .addField('!cumple', 'Informacion para agregar tu cumpleaños', true)
+      .addField('!server', 'Informacion del servidor', true)
+      .addField('churroman', 'Solo no le digas asi', true)
+      .addField('!clear (ADMI)', 'Borra un # de mensajes de la sala', true)
+      .addField('!set (ADMI)', 'Cambia status del bot', true)
+      .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
+      .setColor(0xff6b9f)
+      .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
+      .setFooter('Hecho por moderadores de Varelandia', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
+      
+       message.author.send(embed);
+      } //////////////////////////////////////////////////////////////////////////////////
                             //AMONG US
     if(command === 'impostor') { //El comando
 
@@ -366,6 +367,50 @@ if (message.author.bot) return;
         message.channel.send(embed);
     
     }
+    if(command === 'set') {
+        message.delete()
+        if (!message.member.roles.cache.find(r => r.name === "ADMI")) { // rol moderador
+            return message.channel.send(`Perdon <@${message.author.id}>, no tienes permiso para cambiar el status del bot <:sadKEK:761281532035596349>`).then(e => e.delete({
+				timeout: 5000
+             }))
+        }
+          
+        const content = message.content.replace(prefix + `set`, '')
+        message.delete() //para borrar el mensaje del comando
+        client.user.setPresence({
+                activity: {
+                name: content,
+                url: "https://www.twitch.tv/theburroman69",
+                type: "STREAMING"
+                },
+        })
+    
+    }
+    //borrar mensajes 
+	if (command === "clear") {
+		if (!message.guild.me.permissions.has('Burroman')) {
+			return message.channel.send("No tengo permisos para borrar mensajes.")
+        }
+        if (!message.member.roles.cache.find(r => r.name === "ADMI")) {
+            return message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para borrar mensajes <:sadKEK:761281532035596349>`)
+          }
+
+		if (!args[0]) return message.channel.send(" :no_entry_sign: Nesecitas colocar el __numero__ de mensajes que quieres eliminar no mayor de 100.")
+		let member = args[0]
+		if (isNaN(parseInt(args[0]))) return message.channel.send(" :no_entry_sign:  Nesecitas colocar un __numero__, no letras ni simbolos.")
+		number = parseInt(args[0])
+		if (number >= 100 || number <= 0) return message.channel.send(' :no_entry_sign: El valor es Invalido.')
+		message.channel.bulkDelete(number + 1).then(() => {
+			message.channel.send(` :white_check_mark:  Se eliminaron **${number}** mensajes del Chat.`).then(e => e.delete({
+				timeout: 4000
+			}))
+		}).catch(error => {
+			message.channel.send(`:x: Ocurrio un error: **${error.message}**`).then(e => e.delete({
+				timeout: 4000
+			}))
+		})
+    } //TERMINA COMANDO CLEAR
+
 
 
 
