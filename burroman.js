@@ -362,7 +362,7 @@ if (message.author.bot) return;
             .addField('Emotes' , server.emojis.cache.size, true)
             .addField('Roles', server.roles.cache.size, true)
             .addField('Canales', server.channels.cache.size, true)
-            .setColor("RANDOM")
+            .setColor("0x9c98f8")
     
         message.channel.send(embed);
     
