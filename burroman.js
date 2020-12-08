@@ -76,11 +76,11 @@ client.on('message', msg => {
 
   }
    if(msg.content === 'churroman'){
-    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varelaPiumPium:759776664435294239>')
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varelaPium:782071035125432351>')
 
   }
   if(msg.content === 'Churroman'){
-    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varelaPiumPium:759776664435294239>')
+    msg.channel.send('QUE NO SOY CHURROMAN! <:varelaTriste:745085384047984740> <:varelaPium:782071035125432351>')
 
   }
 
@@ -210,7 +210,7 @@ if (message.author.bot) return;
                 //TERMINA AMONG US
     if(command === '8burro'){
 
-        let rpts = ["Sí", "No", "Tal vez", "No sé", "¡Claro!", "pregunta mas tarde, Estoy tomando jugo <:varelaJuguito:745085367065247794>","No sé bro, no me importa <:Burroman:772335436860882967>","Solo se que tienes problemas <:monkaW:760206755304701974>","Me dejaste pensando <:monkaHmm:760206749486678107>","Regresa luego toy mimido <:varelaWarm:759776554418438166>", "Quedé asi mira <:varelaClown:766118254938554408> " ]
+        let rpts = ["Sí", "No", "Tal vez", "No sé", "¡Claro!", "pregunta mas tarde, Estoy tomando jugo <:varelaJuguito:745085367065247794>","No sé bro, no me importa <:Burroman:772335436860882967>","Solo se que tienes problemas <:monkaW:760206755304701974>","Me dejaste pensando <:monkaHmm:760206749486678107>","Regresa luego toy mimido", "Quedé asi mira <:varelaClown:766118254938554408> " ]
 
         if (!args) return message.reply(`Escriba una pregunta.`)
         let usuario = message.member.user
