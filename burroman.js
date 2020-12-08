@@ -36,6 +36,7 @@ const channelID = '732872280585142282'//Canal welcome
 const targetChannelID = '779033867637620798' //Canal de reglas
 client.on('guildMemberAdd', (member) => {
 console.log(member)
+if(member.guild.id != '732788013264011355') return;//ID del server
 
 const message = `Bievenido <@${member.id}> a __Varelandia__! <:varelaHeart:745085348387881010>  Porfavor revisa las ${member.guild.channels.cache
     .get(targetChannelID)
@@ -49,6 +50,7 @@ channel.send(message)
 const channelID2 = '732872280585142282'//Canal welcome
 client.on('guildMemberRemove', (member) => {
 console.log(member)
+if(member.guild.id != '732788013264011355') return;//ID del server
 
 const message = `${member.user.username} salio corriendo de __Varelandia__! te extrañaremos <:sadKEK:761281532035596349> `
 
