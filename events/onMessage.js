@@ -102,13 +102,13 @@ const sendAvatar = (message) => {
             .setTitle(`${message.author.tag}`)
             .setDescription("Este es tu Avatar")
             .setImage(`${message.author.displayAvatarURL({dynamic: true, size : 1024})}`)
-            .setColor(0x39ffd6)
+            .setColor(0x9c98f8)
     } else {
         embed = new Discord.MessageEmbed()
             .setTitle(`${miembro.tag}'`)
             .setDescription(`${message.author} Este es el Avatar de ${miembro.tag}.`)
             .setImage(miembro.displayAvatarURL({dynamic: true, size : 1024}))
-            .setColor(0x39ffd6)        
+            .setColor(0x9c98f8)        
     };
     message.channel.send(embed);
 }
@@ -309,7 +309,7 @@ const sendServer = (message) => {
         .addField('Emotes' , server.emojis.cache.size, true)
         .addField('Roles', server.roles.cache.size, true)
         .addField('Canales', server.channels.cache.size, true)
-        .setColor("RANDOM")
+        .setColor(0x9c98f8)
     message.channel.send(embed);
 }
 
