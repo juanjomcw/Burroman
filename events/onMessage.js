@@ -420,5 +420,6 @@ const sendInvite = (message) => {
 }
 
 const sendWph = (message) => {
+    message.delete()
     message.channel.send('<:whp1:786677945682755597><:whp2:786677928623996928><:whp3:786677908697382962><:whp4:786677876996702288>')
 }
