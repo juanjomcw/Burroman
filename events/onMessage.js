@@ -42,8 +42,6 @@ module.exports = (message, client) => {
         const args = message.content.slice(prefix.length).trim().split(/ +/g);
         const commandWithPrefix = args.shift().toLowerCase();
         switch(commandWithPrefix) {
-            case 'nuevocomando':
-                return sendNuevoComando(message);
             case 'twitter':
                 return message.channel.send('Sigueme en mi tuister: https://twitter.com/Burroman69')
             case 'twitch':
@@ -79,7 +77,7 @@ module.exports = (message, client) => {
             case 'embed':
                 return sendEmbed(message);
             case 'kick':
-                return sendKick(message, client);
+                return sendKick(message, client, args);
             case 'cofre':
                 return sendCofre(message);
             case 'invite':
@@ -88,10 +86,6 @@ module.exports = (message, client) => {
                 break;
         }
     }
-}
-
-const sendNuevoComando = (message) => {
-    message.channel.send('Este es un nuevo comando');
 }
 
 const sendAvatar = (message) => {
@@ -138,8 +132,8 @@ const sendHelp = (message) => {
         .addField('!server', 'Informacion del servidor', true)
         .addField('churroman', 'Solo no le digas asi', true)
         .addField('!clear (ADMI)', 'Borra un # de mensajes de la sala', true)
+        .addField('!kick (ADMI)', 'kickea a un usuario', true)
         .addField('!set (ADMI)', 'Cambia status del bot', true)
-        .addField('**Invitacion**', '[Link de invitacion](https://discord.gg/de8g7MCdZH)', true)
         .setColor(0xff6b9f)
         .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
         .setFooter('Hecho por moderadores ', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
@@ -375,7 +369,7 @@ const sendClear = async(message, args) => {
 
 }
 
-const sendKick = async(message, client) => {
+const sendKick = async(message, client, args) => {
     message.delete()
    
         let user = message.mentions.users.first();
