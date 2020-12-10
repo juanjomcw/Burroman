@@ -46,8 +46,8 @@ module.exports = (message, client) => {
                 return message.channel.send('Sigueme en mi tuister: https://twitter.com/Burroman69')
             case 'twitch':
                 return message.channel.send('Sigueme en mi tuish: https://www.twitch.tv/theburroman69')
-            case 'prueba':
-                return message.channel.send('<a:elmoFire:786646623282790411>')
+            case 'wph':
+                return sendWph(message);
             case 'avatar':
                 return sendAvatar(message);
             case 'help':
@@ -416,5 +416,9 @@ const sendKick = async(message, client, args) => {
 }
 
 const sendInvite = (message) => {
-    message.channel.send('https://discord.gg/de8g7MCdZH')
+    message.channel.send('https://discord.gg/hvD7RWsESP')
+}
+
+const sendWph = (message) => {
+    message.channel.send('<:whp1:786677945682755597><:whp2:786677928623996928><:whp3:786677908697382962><:whp4:786677876996702288>')
 }
