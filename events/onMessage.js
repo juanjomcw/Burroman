@@ -46,6 +46,8 @@ module.exports = (message, client) => {
                 return message.channel.send('Sigueme en mi tuister: https://twitter.com/Burroman69')
             case 'twitch':
                 return message.channel.send('Sigueme en mi tuish: https://www.twitch.tv/theburroman69')
+            case 'prueba':
+                return message.channel.send('<a:elmoFire:786646623282790411>')
             case 'avatar':
                 return sendAvatar(message);
             case 'help':
