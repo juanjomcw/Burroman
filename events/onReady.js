@@ -6,6 +6,8 @@ module.exports = (client) => {
     const channelId = constants.on_ready_broadcast_channel_id; ///Id del canal
     const channel = client.channels.cache.get(channelId); ///Esto obtiene el canal
     const embed = new Discord.MessageEmbed() ///Crea embed
+        .setTitle("ESTOY LISTO!") ///Nombre
+        .setColor(0x9c98f8) //Color
         .setDescription(
                     '• Se han generado cambios!\n'+
                     `• Burroman esta disponible en ${client.guilds.cache.size} Servidores!\n`) //Descripcion
