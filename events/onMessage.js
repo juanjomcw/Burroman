@@ -185,7 +185,7 @@ const send8Burro = (message) => {
 }
 
 const sendGulag = (message) => {
-    let rpts = ["Sí te iras al gulag <:uff:770760152449155072>","No te iras al gulag <:Burroman:772335436860882967>","Andas de suerte, no iras al gulag <:sadKEK:761281532035596349>", "Es Día de promo! <:happypog:772323350471114814> vete al gulag con un amigo! <:happypog:772323350471114814> ", "Al parecer haz escogido el camino de la MUERTE :smiling_imp: vete al gulag", "directo al gulag", "Hoy no es dia de Gulag <:peepoShy:774102554992312371> "]
+    let rpts = ["Sí te iras al gulag <a:elmoFire:786646623282790411>","No te iras al gulag <:Burroman:772335436860882967>","Andas de suerte, no iras al gulag <:sadKEK:761281532035596349>", "Es Día de promo! <:happypog:772323350471114814> vete al gulag con un amigo! <:happypog:772323350471114814> ", "Al parecer haz escogido el camino de la MUERTE :smiling_imp: vete al gulag", "directo al gulag", "Hoy no es dia de Gulag <:peepoShy:774102554992312371> "]
     message.channel.send(' **El gran __Burroman__ dice que** '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
 }
 
