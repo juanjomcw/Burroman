@@ -427,7 +427,7 @@ const sendWph = (message) => {
 }
 const sendStream = (message) => {
     message.delete()
-    message.channel.send('@everyone Ya Estoy en Stream! <:Burroman:772335436860882967>\n'+
+    message.channel.send('Ya Estoy en Stream! <:Burroman:772335436860882967>\n'+
                          'Caiganle al stream mas chapulin que tu amigo\n'+
                          'https://www.twitch.tv/theburroman69\n'                    
     );
