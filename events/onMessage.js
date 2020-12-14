@@ -84,6 +84,8 @@ module.exports = (message, client) => {
                 return sendCofre(message);
             case 'invite':
                 return sendInvite(message);
+            case 'stream':
+                return sendStream(message);
             default:
                 break;
         }
@@ -422,4 +424,11 @@ const sendInvite = (message) => {
 const sendWph = (message) => {
     message.delete()
     message.channel.send('<:whp1:786677945682755597><:whp2:786677928623996928><:whp3:786677908697382962><:whp4:786677876996702288>')
+}
+const sendStream = (message) => {
+    message.delete()
+    message.channel.send('@everyone Ya Estoy en Stream! <:Burroman:772335436860882967>\n'+
+                         'Caiganle al stream mas chapulin que tu amigo\n'+
+                         'https://www.twitch.tv/theburroman69\n'                    
+    );
 }
