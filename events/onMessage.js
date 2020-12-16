@@ -65,7 +65,7 @@ module.exports = (message, client) => {
             case 'banned':
                 return sendBanned(message);
             case 'espai':
-                return message.channel.send('gei <:uff:770760152449155072> y el fundador de mi nombre');
+                return message.channel.send('gei <a:SALAMI:786643915909890078> y el fundador de mi nombre');
             case 'pesca':
                 return sendPesca(message);
             case 'cumple':
@@ -86,6 +86,8 @@ module.exports = (message, client) => {
                 return sendInvite(message);
             case 'stream':
                 return sendStream(message);
+            case 'peeporuga':
+                return sendPeeporuga(message);
             default:
                 break;
         }
@@ -187,7 +189,7 @@ const send8Burro = (message) => {
 }
 
 const sendGulag = (message) => {
-    let rpts = ["Sí te iras al gulag <a:elmoFire:786646623282790411>","No te iras al gulag <:Burroman:772335436860882967>","Andas de suerte, no iras al gulag <:sadKEK:761281532035596349>", "Es Día de promo! <:happypog:772323350471114814> vete al gulag con un amigo! <:happypog:772323350471114814> ", "Al parecer haz escogido el camino de la MUERTE :smiling_imp: vete al gulag", "directo al gulag", "Hoy no es dia de Gulag <:peepoShy:774102554992312371> "]
+    let rpts = ["Sí te iras al gulag <a:elmoFire:786646623282790411>","No te iras al gulag <:Burroman:772335436860882967>","Andas de suerte, no iras al gulag <:sadKEK:761281532035596349>", "Es Día de promo! <:happypog:772323350471114814> vete al gulag con un amigo! <:happypog:772323350471114814> ", "Al parecer haz escogido el camino de la MUERTE :smiling_imp: vete al gulag", "directo al gulag", "Hoy no es dia de Gulag <:peepoShy:776574982054346762> "]
     message.channel.send(' **El gran __Burroman__ dice que** '+ rpts[Math.floor(Math.random() * rpts.length)]+'');
 }
 
@@ -431,4 +433,8 @@ const sendStream = (message) => {
                          'Caiganle al stream mas chapulin que tu amigo\n'+
                          'https://www.twitch.tv/theburroman69\n'                    
     );
+}
+const sendPeeporuga = (message) => {
+    message.delete()
+    message.channel.send('<:whp1:786677945682755597><:pepePoint:761701490766643260>')
 }
