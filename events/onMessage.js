@@ -137,9 +137,9 @@ const sendHelp = (message) => {
         .addField('!cumple', 'Informacion para agregar tu cumpleaños', true)
         .addField('!server', 'Informacion del servidor', true)
         .addField('churroman', 'Solo no le digas asi', true)
-        .addField('!clear (ADMI)', 'Borra un # de mensajes de la sala', true)
-        .addField('!kick (ADMI)', 'kickea a un usuario', true)
-        .addField('!set (ADMI)', 'Cambia status del bot', true)
+        .addField('!clear (ADMIN)', 'Borra un # de mensajes de la sala', true)
+        .addField('!kick (ADMIN)', 'kickea a un usuario', true)
+        .addField('!set (ADMIN)', 'Cambia status del bot', true)
         .setColor(0xff6b9f)
         .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
         .setFooter('Hecho por moderadores ', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
@@ -315,7 +315,7 @@ const sendServer = (message) => {
 
 const sendSet = async(message, client) => {
     message.delete()
-    if (!message.member.roles.cache.find(r => r.name === "Admi")) {
+    if (!message.member.roles.cache.find(r => r.name === "Admin")) {
         const tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, no tienes permiso para cambiar el status del bot <:sadKEK:761281532035596349>`);
         tmpMessage.delete({ timeout: 5000 });
     } else {
@@ -409,7 +409,7 @@ const sendKick = async(message, client, args) => {
             .addFields(
                 { name: 'Usuario:', value: `${user.username}`},
                 { name: 'Razón:', value: `${razon}`},
-                { name: 'Admi/Mod:', value: `${message.author.tag}`}
+                { name: 'Admin/Mod:', value: `${message.author.tag}`}
                         )
             .setThumbnail('https://cdn.discordapp.com/attachments/261204184307728384/785071418383138826/783888309989408818.png')
             .setTimestamp()
