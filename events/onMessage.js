@@ -421,7 +421,7 @@ const sendKick = async(message, args, client) => {
             .setTimestamp()
             .setColor("RED");
        
-        const channel = client.channels.cache.get(constants.channel_log)
+        const channel = client.channels.cache.get(constants.channel_kick)
         channel.send(embed);
 }
 
@@ -467,7 +467,7 @@ const sendBan = async(message, args, client) => {
             .setTimestamp()
             .setColor("RED");
        
-        const channel = client.channels.cache.get(constants.channel_log)
+        const channel = client.channels.cache.get(constants.channel_kick)
         channel.send(embed);
 
 }
