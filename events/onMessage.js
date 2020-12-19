@@ -79,7 +79,11 @@ module.exports = (message, client) => {
             case 'embed':
                 return sendEmbed(message);
             case 'kick':
-                return sendKick(message, client, args);
+                return sendKick(message, args, client);
+            case 'ban':
+                return sendBan(message, args, client);
+            case 'banlist':
+                return sendBanlist(message);
             case 'cofre':
                 return sendCofre(message);
             case 'invite':
@@ -375,14 +379,14 @@ const sendClear = async(message, args) => {
 
 }
 
-const sendKick = async(message, client, args) => {
+const sendKick = async(message, args, client) => {
     message.delete()
-   
+
         let user = message.mentions.users.first();
         let razon = args.slice(1).join(' ');
 
         let tmpMessage;
-        if (!message.member.roles.cache.find(r => r.name === "mod")) {
+        if (!message.member.roles.cache.find(r => r.name === "MEGAMOD")) {
             tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
             return tmpMessage.delete({ timeout: 5000 });
         }
@@ -398,7 +402,7 @@ const sendKick = async(message, client, args) => {
         }
 
         if (!message.guild.member(user).kickable) {
-            const tmpMessage = await message.reply('No puedo patear al usuario mencionado.');
+            const tmpMessage = await message.reply('No puedo kickear al usuario mencionado.');
             return tmpMessage.delete({ timeout: 5000 });
         }
         
@@ -407,16 +411,98 @@ const sendKick = async(message, client, args) => {
         const embed = new Discord.MessageEmbed()
             .setTitle('Alguien ha sido Expulsado!')
             .addFields(
-                { name: 'Usuario:', value: `${user.username}`},
+                { name: 'Usuario:', value: `${user}`},
                 { name: 'Razón:', value: `${razon}`},
-                { name: 'Admin/Mod:', value: `${message.author.tag}`}
+                { name: 'Admi/Mod:', value: `${message.author.tag}`}
                         )
             .setThumbnail('https://cdn.discordapp.com/attachments/261204184307728384/785071418383138826/783888309989408818.png')
             .setTimestamp()
             .setColor("RED");
        
-        const channel = client.channels.cache.get(constants.channel_kick)
+        const channel = client.channels.cache.get(constants.channel_log)
         channel.send(embed);
+}
+
+const sendBan = async(message, args, client) => {
+    message.delete()
+    
+    let user = message.mentions.members.first() || 
+            message.guild.members.resolve(args[0])
+    let razon = args.slice(1).join(' ');
+   
+    let tmpMessage;
+    if (!message.member.roles.cache.find(r => r.name === "MEGAMOD")) {
+        tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
+        return tmpMessage.delete({ timeout: 5000 });
+        }
+      
+    
+      
+      if (!user) {
+        return message.channel.send('Debe mencionar a alguien para banear')
+      } else if(!user.bannable){
+        return message.channel.send('No puedo banear a esta persona')
+      }else if (user.roles.highest.comparePositionTo(message.member.roles.highest) > 0) {
+        return message.channel.send('Esta persona esta en la misma o mayor nivel de jerarquia que tu, no puedes banearlo')
+      }
+      
+      if (!razon) { 
+        tmpMessage = await message.channel.send('Escriba una razón, `!ban @username [razón]`');
+        return tmpMessage.delete({ timeout: 5000 });
+    }
+        razon += ` || Baneado por ${message.author.tag}`
+            
+            message.guild.members.ban(user, {
+                reason: razon
+            })
+        const embed = new Discord.MessageEmbed()
+            .setTitle('Alguien ha sido Baneado!')
+            .addFields(
+                { name: 'Usuario:', value: `${user}`},
+                { name: 'Razón:', value: `${razon}`}
+                        )
+            .setThumbnail('https://cdn.discordapp.com/attachments/261204184307728384/785071418383138826/783888309989408818.png')
+            .setTimestamp()
+            .setColor("RED");
+       
+        const channel = client.channels.cache.get(constants.channel_log)
+        channel.send(embed);
+
+}
+
+const sendBanlist = async(message) => {
+    
+        
+        let tmpMessage;
+        if (!message.member.roles.cache.find(r => r.name === "MEGAMOD")) {
+                tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
+                return tmpMessage.delete({ timeout: 5000 });
+            }
+            var blist = await message.guild.fetchBans();
+            if(blist.size <= 0) return message.channel.send("No hay baneos en el servidor.")
+            var bansID = blist.map(b => '**→ '+b.user.username +'** | **ID:** '+ b.user.id).join('\n') 
+            const description = '**📌 Usuario y ID:** \n'+bansID
+
+            let embed = new Discord.MessageEmbed()
+                            .setColor("RED")
+                            .setTitle('Lista de __Baneados__ de **'+message.guild.name+'**')
+                            .setDescription(description)
+                            .setFooter('Pedido por: '+message.author.username, message.author.displayAvatarURL())
+                            .setTimestamp()
+                            .setThumbnail(message.guild.iconURL({dynamic: true, size: 1024}))
+
+            const splitDescription = splitMessage(description, {
+                maxLength: 2048,
+                char: "\n",
+                prepend: "",
+                append: ""
+            });
+
+                splitDescription.forEach(async (m) => {
+                    embed.setDescription(m);
+                    message.channel.send(embed)
+    });
+
 }
 
 const sendInvite = (message) => {
