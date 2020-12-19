@@ -143,6 +143,8 @@ const sendHelp = (message) => {
         .addField('churroman', 'Solo no le digas asi', true)
         .addField('!clear (ADMIN)', 'Borra un # de mensajes de la sala', true)
         .addField('!kick (ADMIN)', 'kickea a un usuario', true)
+        .addField('!ban (ADMIN)', 'ban a un usuario', true)
+        .addField('!banlist (ADMIN)', 'lista de usuarios baneados', true)
         .addField('!set (ADMIN)', 'Cambia status del bot', true)
         .setColor(0xff6b9f)
         .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
@@ -336,7 +338,7 @@ const sendSet = async(message, client) => {
 }
 
 const sendClear = async(message, args) => {
-    if (!message.guild.me.permissions.has('VarelaClown')) {
+    if (!message.guild.me.permissions.has('Burroman')) {
         return message.channel.send("No tengo permisos para borrar mensajes.")
     }
     if (!message.member.roles.cache.find(r => r.name === "mod")) {
@@ -386,7 +388,7 @@ const sendKick = async(message, args, client) => {
         let razon = args.slice(1).join(' ');
 
         let tmpMessage;
-        if (!message.member.roles.cache.find(r => r.name === "MEGAMOD")) {
+        if (!message.member.roles.cache.find(r => r.name === "mod")) {
             tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
             return tmpMessage.delete({ timeout: 5000 });
         }
@@ -431,7 +433,7 @@ const sendBan = async(message, args, client) => {
     let razon = args.slice(1).join(' ');
    
     let tmpMessage;
-    if (!message.member.roles.cache.find(r => r.name === "MEGAMOD")) {
+    if (!message.member.roles.cache.find(r => r.name === "mod")) {
         tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
         return tmpMessage.delete({ timeout: 5000 });
         }
@@ -474,7 +476,7 @@ const sendBanlist = async(message) => {
     
         
         let tmpMessage;
-        if (!message.member.roles.cache.find(r => r.name === "MEGAMOD")) {
+        if (!message.member.roles.cache.find(r => r.name === "Admin")) {
                 tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
                 return tmpMessage.delete({ timeout: 5000 });
             }
