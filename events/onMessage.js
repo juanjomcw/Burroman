@@ -442,10 +442,19 @@ const sendBan = async(message, args, client) => {
       
       if (!user) {
         return message.channel.send('Debe mencionar a alguien para banear')
+               .then(e => e.delete({
+            timeout: 4000
+        }))
       } else if(!user.bannable){
         return message.channel.send('No puedo banear a esta persona')
+               .then(e => e.delete({
+            timeout: 4000
+        }))
       }else if (user.roles.highest.comparePositionTo(message.member.roles.highest) > 0) {
         return message.channel.send('Esta persona esta en la misma o mayor nivel de jerarquia que tu, no puedes banearlo')
+               .then(e => e.delete({
+            timeout: 4000
+        }))
       }
       
       if (!razon) { 
