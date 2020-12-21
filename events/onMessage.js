@@ -619,7 +619,7 @@ const sendUser = async(message) => {
                 },
                 {
                     name:"**🚀 ¿Boostea?**:",
-                    value: member.premiumSince ? '**Está boosteando '+message.guild.name+' <:boost:790483016509030411> **' : '**No Boosteo '+message.guild.name+' <:SadCat:790484033993441281> **',
+                    value: member.premiumSince ? '**Está boosteando '+message.guild.name+' <:boost:790483016509030411> **' : '**No Boostea '+message.guild.name+' <:SadCat:790484033993441281> **',
                     inline: true
                     
                 },
