@@ -575,7 +575,7 @@ const sendUser = async(message) => {
     
     
             const embed = new Discord.MessageEmbed() 
-            .setDescription("**INFORMACIÓN DEL USUARIO:**")
+            .setDescription(`**${message.author.username} está es la información del usuario:**`)
             .setColor(0x9c98f8)
             .addFields(
                 {
