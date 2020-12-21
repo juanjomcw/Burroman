@@ -544,7 +544,7 @@ const sendUser = async(message) => {
         "offline": "⚪ Desconectado/invisible"
       };
 
-      const member = message.mentions.users.first()
+      const member = message.mentions.members.first() || message.member
 
       function formatDate (template, date) {
         var specs = 'YYYY:MM:DD:HH:mm:ss'.split(':')
@@ -587,7 +587,7 @@ const sendUser = async(message) => {
             },
             {
                 name: "**📌 Apodo del usuario**:",
-                value: message.member.nickname ? message.member.nickname : "No tiene apodo", 
+                value: message.member.nickname ? message.user.nickname : "No tiene apodo", 
                 inline: true 
             },
             {
