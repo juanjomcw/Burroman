@@ -573,7 +573,7 @@ const sendUser = async(message) => {
 
         const embed = new MessageEmbed() 
         .setDescription("**INFORMACIÓN DEL USUARIO:**")
-        .setColor(`#ff8000`)
+        .setColor(0x9c98f8)
         .addFields(
             {
                name:"**🎫 Nombre**:",
