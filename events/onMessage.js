@@ -544,7 +544,7 @@ const sendUser = async(message) => {
         "offline": "⚪ Desconectado/invisible"
       };
 
-      const member = message.mentions.members.first() || message.member
+      const member = message.mentions.users.first()
 
       function formatDate (template, date) {
         var specs = 'YYYY:MM:DD:HH:mm:ss'.split(':')
@@ -571,7 +571,7 @@ const sendUser = async(message) => {
         }
 
 
-        const embed = new Discord.MessageEmbed()  
+        const embed = new Discord.MessageEmbed() 
         .setDescription("**INFORMACIÓN DEL USUARIO:**")
         .setColor(0x9c98f8)
         .addFields(
