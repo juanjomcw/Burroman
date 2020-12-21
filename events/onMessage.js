@@ -560,10 +560,10 @@ const sendUser = async(message) => {
     
           let badges1 = {
          
-            'DISCORD_PARTNER': '<:new_partner_badge:790465640368046121> ',
-            'HOUSE_BRAVERY': '<:bravery:790467590464077874> ',
-            'HOUSE_BRILLIANCE': '<:Brilliance:790467590664224778> ',
-            'HOUSE_BALANCE': '<:BALANCE:790467589951324220> ',
+            'DISCORD_PARTNER': '<:partner:790483011610869831> ',
+            'HOUSE_BRAVERY': '<:bravery:790483010696511517> ',
+            'HOUSE_BRILLIANCE': '<:Brilliance:790483011056566313>  ',
+            'HOUSE_BALANCE': '<:BALANCE:790483010394128404> ',
     
     
            
@@ -619,7 +619,7 @@ const sendUser = async(message) => {
                 },
                 {
                     name:"**🚀 ¿Boostea?**:",
-                    value: member.premiumSince ? '**Está boosteando '+message.guild.name+' <:boost:790483016509030411> **' : '**No Boosteo '+message.guild.name+' <:SadCat:790465642066083852> **',
+                    value: member.premiumSince ? '**Está boosteando '+message.guild.name+' <:boost:790483016509030411> **' : '**No Boosteo '+message.guild.name+' <:SadCat:790484033993441281> **',
                     inline: true
                     
                 },
