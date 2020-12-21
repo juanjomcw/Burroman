@@ -528,7 +528,7 @@ const sendPeeporuga = (message) => {
     message.channel.send('<:whp1:786677945682755597><:pepePoint:761701490766643260>')
 }
 
-const sendUser = (message) => {
+const sendUser = async(message) => {
     
     let tmpMessage;
     if (!message.member.roles.cache.find(r => r.name === "Admin")) {
