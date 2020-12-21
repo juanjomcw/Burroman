@@ -478,7 +478,7 @@ const sendBanlist = async(message) => {
     
         
         let tmpMessage;
-        if (!message.member.roles.cache.find(r => r.name === "Admin")) {
+        if (!message.member.roles.cache.find(r => r.name === "mod")) {
                 tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
                 return tmpMessage.delete({ timeout: 5000 });
             }
@@ -532,7 +532,7 @@ const sendPeeporuga = (message) => {
 const sendUser = async(message) => {
     
     let tmpMessage;
-    if (!message.member.roles.cache.find(r => r.name === "Admin")) {
+    if (!message.member.roles.cache.find(r => r.name === "mod")) {
             tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, pero no tienes el permiso para usar el comando <:sadKEK:761281532035596349>`);
             return tmpMessage.delete({ timeout: 5000 });
         }
