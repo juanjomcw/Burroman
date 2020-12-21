@@ -537,103 +537,104 @@ const sendUser = async(message) => {
             return tmpMessage.delete({ timeout: 5000 });
         }
 
-    let estados = {
-        "online": "🟢 En Línea",
-        "idle": "🌙 Ausente",
-        "dnd": "🔴 No molestar",
-        "offline": "⚪ Desconectado/invisible"
-      };
-
-      const member = message.mentions.members.first() || message.member
-
-      function formatDate (template, date) {
-        var specs = 'YYYY:MM:DD:HH:mm:ss'.split(':')
-        date = new Date(date || Date.now() - new Date().getTimezoneOffset() * 6e4)
-        return date.toISOString().split(/[-:.TZ]/).reduce(function (template, item, i) {
-          return template.split(specs[i]).join(item)
-        }, template)
-      }
-
-
-      let badges1 = {
-     
-        'DISCORD_PARTNER': '<:partner:790483011610869831> ',
-        'HOUSE_BRAVERY': '<:bravery:790483010696511517>',
-        'HOUSE_BRILLIANCE': '<:Brilliance:790483011056566313>',
-        'HOUSE_BALANCE': '<:BALANCE:790483010394128404>',
-
-
-       
-      }
-
-      let obj = {
-        "HOUSE_BRAVERY" : "Bravery" , "HOUSE_BRILLIANCE" : "Brilliance" , "DISCORD_PARTNER" : "Socio de discord"
-        }
-
-
-        const embed = new Discord.MessageEmbed() 
-        .setDescription("**INFORMACIÓN DEL USUARIO:**")
-        .setColor(0x9c98f8)
-        .addFields(
-            {
-               name:"**🎫 Nombre**:",
-               value: "**" + `${member.user.tag}` + "**",
-               inline: true
-            },
-            {
-                name:"**🎟 ID**:",
-               value: `${member.user.id}`,
-               inline: true
-            },
-            {
-                name: "**📌 Apodo del usuario**:",
-                value: message.member.nickname ? message.user.nickname : "No tiene apodo", 
-                inline: true 
-            },
-            {
-                name:"**🛎 Fecha de Ingreso al Servidor:**",
-                value: formatDate('DD/MM/YYYY, a las HH:mm:ss', member.joinedAt),
-                inline: true
-
-            },
-            {
-                name: "**📥 Cuenta Creada:**",
-                value: formatDate('DD/MM/YYYY, a las HH:mm:ss', member.user.createdAt),
-                inline: true
-
-            },
-            {
-                name:"**🏳️ Insignias:**",
-                value: member.user.flags.toArray().length ? member.user.flags.toArray().map(badge => badges1[badge]).join(' ') : "No tiene insignias",
-                inline: true
-
-            },
-            {
-                name: "**🎨 Estado**:",
-                value: member.user.presence.activities[0] ? member.user.presence.activities[0].state : "Sin estado",
-                inline: true// En linea: SI
-            },
-            {
-                name: "**🎖 Roles**:",
-                value: member.roles.cache.map(roles => `\`${roles.name}\``).join(', '),
-                inline: true
-
-            },
-            {
-                name: "**🌐 Actividad**:",
-                value: "" + estados[member.user.presence.status] + "",
-                inline: true
-
-            },
-            {
-                name:"**🚀 ¿Boostea?**:",
-                value: member.premiumSince ? '**Está boosteando '+message.guild.name+' <:boost:790483016509030411> **' : '**No Boosteo '+message.guild.name+' <:SadCat:790465642066083852> **',
-                inline: true
-
+    
+        let estados = {
+            "online": "🟢 En Línea",
+            "idle": "🌙 Ausente",
+            "dnd": "🔴 No molestar",
+            "offline": "⚪ Desconectado"
+          };
+    
+          const member = message.mentions.members.first() || message.member
+    
+            
+    
+          function formatDate (template, date) {
+            var specs = 'YYYY:MM:DD:HH:mm:ss'.split(':')
+            date = new Date(date || Date.now() - new Date().getTimezoneOffset() * 6e4)
+            return date.toISOString().split(/[-:.TZ]/).reduce(function (template, item, i) {
+              return template.split(specs[i]).join(item)
+            }, template)
+          }
+    
+    
+          let badges1 = {
+         
+            'DISCORD_PARTNER': '<:new_partner_badge:790465640368046121> ',
+            'HOUSE_BRAVERY': '<:bravery:790467590464077874> ',
+            'HOUSE_BRILLIANCE': '<:Brilliance:790467590664224778> ',
+            'HOUSE_BALANCE': '<:BALANCE:790467589951324220> ',
+    
+    
+           
+          }
+    
+          let obj = {
+            "HOUSE_BRAVERY" : "Bravery" , "HOUSE_BRILLIANCE" : "Brilliance" , "DISCORD_PARTNER" : "Socio de discord"
             }
-        )
-            .setThumbnail (member.user.displayAvatarURL({ format: "png", dynamic: true, size: 1024 }))
-            .setFooter(`${message.author.username}`, `${message.author.displayAvatarURL({dynamic: true})}`)
-            message.channel.send(embed)
-
-}
+    
+    
+            const embed = new Discord.MessageEmbed() 
+            .setDescription("**INFORMACIÓN DEL USUARIO:**")
+            .setColor(0x9c98f8)
+            .addFields(
+                {
+                   name:"**🎫 Nombre**:",
+                   value: "**" + `${member.user.tag}` + "**",
+                   inline: true
+                },
+                {
+                    name:"**🎟 ID**:",
+                   value: `${member.user.id}`,
+                   inline: true
+                },
+                {
+                    name: "**📌 Estado**:",
+                    value: member.user.presence.activities[0] ? member.user.presence.activities[0].state : "Sin estado",
+                    inline: true// En linea: SI
+                },
+                {
+                    name:"**🛎 Fecha de Ingreso al Servidor:**",
+                    value: formatDate('DD/MM/YYYY, a las HH:mm:ss', member.joinedAt),
+                    inline: true
+    
+                },
+                {
+                    name: "**📥 Cuenta Creada:**",
+                    value: formatDate('DD/MM/YYYY, a las HH:mm:ss', member.user.createdAt),
+                    inline: true
+    
+                },
+                {
+                    name:"**🏳️ Insignias:**",
+                    value: member.user.flags.toArray().length ? member.user.flags.toArray().map(badge => badges1[badge]).join(' ') : "No tiene insignias",
+                    inline: true
+    
+                },
+                {
+                    name: "**🌐 Actividad**:",
+                    value: "" + estados[member.user.presence.status] + "",
+                    inline: true
+                    
+                },
+                {
+                    name:"**🚀 ¿Boostea?**:",
+                    value: member.premiumSince ? '**Está boosteando '+message.guild.name+' <:boost:790483016509030411> **' : '**No Boosteo '+message.guild.name+' <:SadCat:790465642066083852> **',
+                    inline: true
+                    
+                },
+                {
+                    name: "**🎖 Roles**:",
+                    value: member.roles.cache.map(roles => `\`${roles.name}\``).join(', '),
+                    inline: true
+    
+                }
+                )
+                .setThumbnail (member.user.displayAvatarURL({ format: "png", dynamic: true, size: 1024 }))//y el avatar del usuario
+                .setFooter(`${message.author.username}`, `${message.author.displayAvatarURL({dynamic: true})}`)//nombre y avatar del usuario en el footer
+                .setTimestamp()
+                message.channel.send(embed)
+    
+        
+    }
+    
