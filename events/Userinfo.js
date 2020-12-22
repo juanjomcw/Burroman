@@ -138,8 +138,8 @@ const sendUser = async(message) => {
                 .setFooter(`${message.author.username}`, `${message.author.displayAvatarURL({dynamic: true})}`)//nombre y avatar del usuario en el footer
                 .setTimestamp()
                 
-                const channel = member.guild.channels.cache.get(constants.channel_userinfo)
-                message.channel.send(embed)
+                const channel = message.guild.channels.cache.get(constants.channel_userinfo)
+                channel.send(embed)
     
         
     }
