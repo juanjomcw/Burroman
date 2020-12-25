@@ -1,3 +1,3 @@
-worker: node burroman.js
+worker: npm start
 
 
