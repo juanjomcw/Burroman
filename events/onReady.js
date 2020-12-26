@@ -19,7 +19,7 @@ module.exports = (client) => {
     client.user.setPresence({
         status: "online",
         activity: {
-            name: "Burroman en stream",
+            name: "!help | Varelandia",
             url: "https://www.twitch.tv/theburroman69",
             type: "STREAMING"
         }
