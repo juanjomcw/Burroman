@@ -53,8 +53,6 @@ module.exports = (message, client) => {
                 return sendAvatar(message);
             case 'help':
                 return sendHelp(message);
-            case 'impostor':
-                return sendImpostor(message);
             case '8burro':
                 if (!args) return message.reply(`Escriba una pregunta.`);
                 return send8Burro(message);
@@ -67,32 +65,16 @@ module.exports = (message, client) => {
                 return sendBanned(message);
             case 'espai':
                 return message.channel.send('gei <a:SALAMI:786643915909890078> y el fundador de mi nombre');
-            case 'pesca':
-                return sendPesca(message);
-            case 'cumple':
-                return sendCumple(message);
-            case 'server':
-                return sendServer(message);
-            case 'set':
-                return sendSet(message, client);
             case 'clear':
                 return sendClear(message, args);
-            case 'embed':
-                return sendEmbed(message);
             case 'kick':
                 return sendKick(message, args, client);
             case 'ban':
                 return sendBan(message, args, client);
             case 'banlist':
                 return sendBanlist(message);
-            case 'cofre':
-                return sendCofre(message);
             case 'invite':
                 return sendInvite(message);
-            case 'stream':
-                return sendStream(message);
-            case 'peeporuga':
-                return sendPeeporuga(message);
             default:
                 break;
         }
@@ -130,66 +112,23 @@ const sendHelp = (message) => {
         .addField('ban', 'emote Banned', true)
         .addField('!twitch', 'Muestra Twitch de burroman', true)
         .addField('!twitter', 'Muestra Twitter de burroman', true)
-        .addField('!impostor', 'Muestra si tu eres impostor u otro user', true)
         .addField('!8burro', 'Hazle preguntas y respondera con afirmacion o negacion', true)
         .addField('!love', 'Muestra el amor entre dos personas', true)
         .addField('!banned', 'Muestra gif al azar de banneos', true)
         .addField('!espai', 'Te dice quien es espai', true)
-        .addField('!pesca', 'Mini juego donde te dice que pescaste', true)
         .addField('!gulag', 'Te sientes con suerte y no le temes a la muerte? entonces usalo', true)
         .addField('!invite', 'link de invitacion al server', true)
-        .addField('!cofre', 'Informacion sobre cofres para subs', true)
-        .addField('!cumple', 'Informacion para agregar tu cumpleaños', true)
-        .addField('!server', 'Informacion del servidor', true)
         .addField('churroman', 'Solo no le digas asi', true)
         .addField('!clear (ADMIN)', 'Borra un # de mensajes de la sala', true)
         .addField('!kick (ADMIN)', 'kickea a un usuario', true)
         .addField('!ban (ADMIN)', 'ban a un usuario', true)
         .addField('!banlist (ADMIN)', 'lista de usuarios baneados', true)
-        .addField('!set (ADMIN)', 'Cambia status del bot', true)
-        .addField('!user (ADMIN)', 'Informacion de un usuario', true)
         .setColor(0xff6b9f)
         .setImage('https://cdn.discordapp.com/attachments/289829636391567370/774401280458227782/varelaLove.png')
         .setFooter('Hecho por moderadores ', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
     message.author.send(embed);
 }
 
-const sendImpostor = (message) => {
-    const mencionado = message.mentions.members.first() //Definimos mencionado
-        
-    let random = [
-        "No era el impostor",
-        "Era el impostor"
-    ] //Hacemos frases para ver si es o no
-    
-    let messageToSend = '';
-    if (!mencionado) {
-        messageToSend = `. 　　　。　　　　•　 　ﾟ　　。 　　.
-    
-        　　　.　　　 　　.　　　　　。　　 。　. 　
-        
-        .　　 。　　　　　 ඞ 。 . 　　 • 　　　　•
-        
-        　　ﾟ　　 ${message.author.username} ${random[Math.floor(Math.random() * random.length)]} 　 。　.
-        
-        　　'　　　 ${Math.floor(Math.random() * 3) + 1} Impostores restantes 　 　　。
-        
-        　　ﾟ　　　.　　　. ,　　　　.　 .`
-    } else {
-        messageToSend = `. 　　　。　　　　•　 　ﾟ　　。 　　.
-    
-        　　　.　　　 　　.　　　　　。　　 。　. 　
-        
-        .　　 。　　　　　 ඞ 。 . 　　 • 　　　　•
-        
-        　　ﾟ　　 ${mencionado.user.username} ${random[Math.floor(Math.random() * random.length)]} 　 。　.
-        
-        　　'　　　 ${Math.floor(Math.random() * 3) + 1} Impostores restantes 　 　　。
-        
-        　　ﾟ　　　.　　　. ,　　　　.　 .`
-    }
-    message.channel.send(messageToSend);
-}
 
 const send8Burro = (message) => {
     let rpts = ["Sí", "No", "Tal vez", "No sé", "¡Claro!", "pregunta mas tarde, Estoy tomando jugo <:varelaJuguito:745085367065247794>","No sé bro, no me importa <:Burroman:772335436860882967>","Solo se que tienes problemas <:monkaW:760206755304701974>","Me dejaste pensando <:monkaHmm:760206749486678107>","Regresa luego toy mimido <:varelaWarm:759776554418438166>", "Quedé asi mira <:varelaClown:766118254938554408> " ]
@@ -230,115 +169,6 @@ const sendBanned = (message) => {
     
     message.channel.send({ embed });
 }
-
-const sendPesca = (message) => {
-    const rollFish = Math.floor(Math.random() * 20) + 1;
-    switch (rollFish) {
-        case 1: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :tropical_fish:');
-        case 2: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :fish:');
-        case 3: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shopping_cart:');
-        case 4: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :radio:');
-        case 5: 
-            return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
-        case 6: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :minidisc:');
-        case 7: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :squid:');
-        case 8: 
-            return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
-        case 9: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :crab:');
-        case 10: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :roll_of_paper:');
-        case 11: 
-            return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
-        case 12: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :roll_of_paper:');
-        case 13: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :crab:');
-        case 14: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :tropical_fish:');
-        case 15: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :dolphin:');
-        case 16: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :lobster:');
-        case 17: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shark:');
-        case 18: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :whale:');
-        case 19: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :lobster:');
-        case 20: 
-            return message.channel.send('Felicitaciones, ' + message.author.username + '! pescaste: :shark:');
-        default:
-            return message.channel.send('Vaya, ' + message.author.username + ' parece que hoy no es tu dia de suerte :pensive: ');
-    }
-}
-
-const sendCumple = (message) => {
-    message.delete() //para borrar el mensaje del comando
-    message.channel.send('Amigos, metimos un Bot para recordar su cumpleaños y así poder felicitarlos! :birthday:\n'+
-        'el Bot es sencillo solo tienen que poner lo siguiente:\n'+
-        ' ``bday set <zona horaria> dd/mm o mm/dd`` (según zona horaria es el formato) de cualquier forma les pide confirmación con la fecha según escribieron\n'+
-        'para ver zona horaria: <https://kevinnovak.github.io/Time-Zone-Picker/>\n'+
-        '__Ejemplo:__\n'+
-        '``bday set America/Chihuahua 18/05``\n'+
-        'Si confirmaron por error pongan ``bday purge`` para borrar su fecha\n'+
-        '     \n'+
-        `Cualquier duda pueden preguntarle a <@&772185854336303184> \n`
-    );
-}
-const sendCofre = (message) => {
-    message.delete()
-    message.channel.send(
-        'Acabamos de integrar los cofrecitos de streamloots, todos los subs tienen derecho a reclamar un cofre por mes (cada resub)\n'+
-        'solo pasen el nick de su cuenta de streamloots, si no cuentan con una pueden crearla en el siguiente link\n'+
-        '<https://www.streamloots.com/varelabere>\n'+ 
-        'para asi reclamar su cofre\n'+
-        'una vez entregado notaran un :white_check_mark: en su comentario\n'
-
-    )
-}
-
-const sendServer = (message) => {
-    const server = message.guild;
-    const embed = new Discord.MessageEmbed()
-        .setThumbnail(server.iconURL({dynamic: true}))
-        .setAuthor(server.name, server.iconURL({dynamic: true}))
-        .addField('ID', server.id, true)
-        .addField('Región', server.region, true)
-        .addField('Creado el', server.joinedAt.toDateString(), true)
-        .addField('Dueño del Servidor', `${server.owner}` , true)
-        .addField('Miembros', server.memberCount, true)
-        .addField('Emotes' , server.emojis.cache.size, true)
-        .addField('Roles', server.roles.cache.size, true)
-        .addField('Canales', server.channels.cache.size, true)
-        .setColor(0x9c98f8)
-    message.channel.send(embed);
-}
-
-const sendSet = async(message, client) => {
-    message.delete()
-    if (!message.member.roles.cache.find(r => r.name === "Admin")) {
-        const tmpMessage = await message.channel.send(`Perdon <@${message.author.id}>, no tienes permiso para cambiar el status del bot <:sadKEK:761281532035596349>`);
-        tmpMessage.delete({ timeout: 5000 });
-    } else {
-        const content = message.content.replace(prefix + `set`, '')
-        message.delete() //para borrar el mensaje del comando
-        client.user.setPresence({
-            activity: {
-                name: content,
-                url: "https://www.twitch.tv/theburroman69",
-                type: "STREAMING"
-            },
-        })
-    }
-}
-
 const sendClear = async(message, args) => {
     if (!message.guild.me.permissions.has('Burroman')) {
         return message.channel.send("No tengo permisos para borrar mensajes.")
@@ -515,14 +345,4 @@ const sendWph = (message) => {
     message.delete()
     message.channel.send('<:whp1:786677945682755597><:whp2:786677928623996928><:whp3:786677908697382962><:whp4:786677876996702288>')
 }
-const sendStream = (message) => {
-    message.delete()
-    message.channel.send('Ya Estoy en Stream! <:Burroman:772335436860882967>\n'+
-                         'Caiganle al stream mas chapulin que tu amigo\n'+
-                         'https://www.twitch.tv/theburroman69\n'                    
-    );
-}
-const sendPeeporuga = (message) => {
-    message.delete()
-    message.channel.send('<:whp1:786677945682755597><:pepePoint:761701490766643260>')
-}
+
