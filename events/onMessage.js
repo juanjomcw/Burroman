@@ -8,9 +8,7 @@ module.exports = (message, client) => {
     
     if (!commandHasPreffix) {
 
-        if(message.guild.id != constants.server_id ) return;
-
-        // Commands sin prefijo
+             // Commands sin prefijo
         switch(message.content) {
             case 'Burroman':
                 message.channel.send(`Silencio <@${msg.author.id}> <:Burroman:772335436860882967>`);
