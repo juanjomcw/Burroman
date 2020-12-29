@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
+const config = require("../config.json");
 const constants = require('../utils/constants');
 const { splitMessage } = require('discord.js');
+const prefix  = config.prefix;
 
 let prefix  = process.env.PREFIX;
 
