@@ -353,7 +353,7 @@ const sendSV = (message) => {
     .setAuthor(message.author.username, message.author.avatarURL({dynamic: true}))
     .setImage(server.iconURL({dynamic: true, size: 1024}))
     .setColor(0x9c98f8)
-    .setFooter(`Hecho los Admin de ${server.name}` , 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png')
+    .setFooter(`Hecho por los Admin de ${server.name}` , 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png')
     .setTimestamp();
     };
     message.channel.send(embed);
