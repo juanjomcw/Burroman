@@ -53,9 +53,6 @@ module.exports = (message, client) => {
             case '8burro':
                 if (!args) return message.reply(`Escriba una pregunta.`);
                 return send8Burro(message);
-            case 'gulag':
-                if (!args) return message.reply(`Escriba una pregunta.`);
-                return sendGulag(message);
             case 'love':
                 return sendLove(message);
             case 'banned':
@@ -72,6 +69,8 @@ module.exports = (message, client) => {
                 return sendBanlist(message);
             case 'invite':
                 return sendInvite(message);
+            case 'sv':
+                return sendSV(message);
             default:
                 break;
         }
@@ -342,4 +341,22 @@ const sendWph = (message) => {
     message.delete()
     message.channel.send('<:whp1:786677945682755597><:whp2:786677928623996928><:whp3:786677908697382962><:whp4:786677876996702288>')
 }
+
+const sendSV = (message) => {
+    
+    const server = message.guild;
+    const miembro = message.mentions.users.first()
+    let embed;
+    if (!miembro) {
+        embed = new Discord.MessageEmbed()
+    .setTitle(`Este es el Avatar del Servidor.`)
+    .setAuthor(message.author.username, message.author.avatarURL({dynamic: true}))
+    .setImage(server.iconURL({dynamic: true, size: 1024}))
+    .setColor(0x9c98f8)
+    .setFooter(`Hecho los Admin de ${server.name}` , 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png')
+    .setTimestamp();
+    };
+    message.channel.send(embed);
+}
+
 
