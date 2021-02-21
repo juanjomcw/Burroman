@@ -71,6 +71,8 @@ module.exports = (message, client) => {
                 return sendInvite(message);
             case 'sv':
                 return sendSV(message);
+            case 'cumple'
+                return sendCumple(message);
             default:
                 break;
         }
@@ -359,4 +361,30 @@ const sendSV = (message) => {
     message.channel.send(embed);
 }
 
+const sendCumple = (message) => {
+    message.delete();
+    const exampleEmbed = new Discord.MessageEmbed()
+    .setColor('RANDOM')
+    .setTitle('Instrucciones para registrar tu cumpleaños 🎂')
+    .setDescription('El  comando es sencillo solo tienen que poner lo siguiente:\n'+
+                    ' `day set <zona horaria> dd/mm` \n'+
+                    'En el siguiente link pueden ver zona horaria: \n'+
+                    'https://kevinnovak.github.io/Time-Zone-Picker/ \n'+
+                    '__Ejemplo:__\n'+
+                    '`bday set America/Chihuahua 18/05`\n'+
+                    '\n'+
+                    '**Importante que confirmen su fecha con la reacción ✅** \n'+
+                    'Si no confirman no se guardará su fecha\n'+
+                    '\n'+
+                    'Cualquier duda pueden preguntarle a algun Admin \n'+
+                    '\n'+
+                    '**NOTA:** Si confirmaron por error pongan `bday purge` para borrar su fecha\n'
+        )
+    .setThumbnail(message.guild.iconURL({dynamic: true}))
+    .setTimestamp()
+    .setFooter('Hecho por moderadores ', 'https://cdn.discordapp.com/attachments/289829636391567370/774397423014903818/745085348387881010.png');
+
+    message.channel.send(exampleEmbed);
+
+}
 
