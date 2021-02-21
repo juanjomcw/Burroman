@@ -364,7 +364,7 @@ const sendSV = (message) => {
 const sendCumple = (message) => {
     message.delete();
     const exampleEmbed = new Discord.MessageEmbed()
-    .setColor('RANDOM')
+    .setColor(0x9c98f8)
     .setTitle('Instrucciones para registrar tu cumpleaños 🎂')
     .setDescription('El  comando es sencillo solo tienen que poner lo siguiente:\n'+
                     ' `day set <zona horaria> dd/mm` \n'+
