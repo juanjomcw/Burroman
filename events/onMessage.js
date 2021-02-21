@@ -71,7 +71,7 @@ module.exports = (message, client) => {
                 return sendInvite(message);
             case 'sv':
                 return sendSV(message);
-            case 'cumple'
+            case 'cumple':
                 return sendCumple(message);
             default:
                 break;
